@@ -54,6 +54,12 @@ declare global {
         pick<T>(...keys: (keyof ThisType<T>)[]): object;
         getPath<T>(this: T, path: string): any;
     }
+
+    interface Function {
+        debounce(delay: number): (...args: any[]) => void;
+        throttle(delay: number): (...args: any[]) => void;
+        once(): (...args: any[]) => any;
+    }
 }
 
 export { };

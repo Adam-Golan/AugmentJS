@@ -3,3 +3,4 @@ import './number';
 import './bigint';
 import './array';
 import './object';
+import './function';
