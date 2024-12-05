@@ -103,6 +103,10 @@ declare global {
         changeValues(callback: (key: K, value: V, map: Map<K, V>) => V): Map<K, V>;
         toObject<K extends string | number | symbol, V>(): Record<K, V>;
     }
+
+    interface RegExp {
+        testAsync(substr: string): Promise<boolean>;
+    }
 }
 
 export { };
