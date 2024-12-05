@@ -1,3 +1,5 @@
+import { IDateTimeDiff } from "./date/index";
+
 declare global {
     interface String {
         capitalize(): string;
@@ -73,6 +75,16 @@ declare global {
         safeParse<T>(jsonString: string, defaultValue: T): T;
         deepCopy<T>(toCopy: T): T;
         pretty<T>(value: T, indent: number): string;
+    }
+
+    interface Date {
+        getTimeDiff(b: Date): IDateTimeDiff;
+        toISODateString(): string;
+        isLeapYear(): boolean;
+        isSameDay(date: Date): boolean;
+        daysBetween(date: Date): number;
+        add(type: 'y' | 'm' | 'd', value: number): Date;
+        subtract(type: 'y' | 'm' | 'd', value: number): Date;
     }
 }
 
