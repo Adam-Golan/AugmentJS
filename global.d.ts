@@ -30,6 +30,21 @@ declare global {
         isPrime(): boolean;
         toDecimalString(): string;
     }
+
+    interface Array<T> {
+        first: T;
+        last: T;
+        avg(): number;
+        chunk(size: number): T[][];
+        unique(): T[];
+        shuffle(): T[];
+        remove<T>(value: T): T[];
+        diff(value: any[]): any[];
+        intersect(value: any[]): any[];
+        rotate<T>(steps: number): T[];
+        groupBy<T>(fn: (item: T) => keyof T): { [k: string]: T[] };
+        countBy<T>(fn: (item: T) => keyof T): { [k: string]: number };
+    }
 }
 
 export { };
