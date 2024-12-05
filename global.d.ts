@@ -45,6 +45,15 @@ declare global {
         groupBy<T>(fn: (item: T) => keyof T): { [k: string]: T[] };
         countBy<T>(fn: (item: T) => keyof T): { [k: string]: number };
     }
+
+    interface Object {
+        cloneDeep(): object;
+        mergeDeep(source: object): object;
+        isEmpty(): boolean;
+        omit<T>(...keys: (keyof ThisType<T>)[]): object;
+        pick<T>(...keys: (keyof ThisType<T>)[]): object;
+        getPath<T>(this: T, path: string): any;
+    }
 }
 
 export { };
