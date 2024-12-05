@@ -68,6 +68,12 @@ declare global {
         retry(retries: number, delay: number): Promise<T>;
         series(promises: (() => Promise<T>)[]): Promise<T[]>;
     }
+
+    interface JSON {
+        safeParse<T>(jsonString: string, defaultValue: T): T;
+        deepCopy<T>(toCopy: T): T;
+        pretty<T>(value: T, indent: number): string;
+    }
 }
 
 export { };
