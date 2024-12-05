@@ -60,6 +60,14 @@ declare global {
         throttle(delay: number): (...args: any[]) => void;
         once(): (...args: any[]) => any;
     }
+
+    interface Promise<T = any> {
+        timeout(ms: number, timeoutError: string): Promise<T>;
+        finallyCatch(callback: (error: any) => void): Promise<T>;
+        to(): Promise<[any, T | undefined]>;
+        retry(retries: number, delay: number): Promise<T>;
+        series(promises: (() => Promise<T>)[]): Promise<T[]>;
+    }
 }
 
 export { };

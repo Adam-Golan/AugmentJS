@@ -4,3 +4,4 @@ import './bigint';
 import './array';
 import './object';
 import './function';
+import './promise';
