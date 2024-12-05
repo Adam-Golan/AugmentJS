@@ -94,6 +94,15 @@ declare global {
         isSubset(set: Set<T>): boolean;
         symmetricDiff(set: Set<T>): Set<T>;
     }
+
+    interface Map<K, V> {
+        invert(): Map<V, K>;
+        filter(callback: (value: V, key: K, map: Map<K, V>) => boolean): Map<K, V>;
+        setMap(keys: K[], values: V[]): Map<K, V>;
+        changeKeys(callback: (key: K, value: V, map: Map<K, V>) => K): Map<K, V>;
+        changeValues(callback: (key: K, value: V, map: Map<K, V>) => V): Map<K, V>;
+        toObject<K extends string | number | symbol, V>(): Record<K, V>;
+    }
 }
 
 export { };

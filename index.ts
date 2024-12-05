@@ -8,3 +8,4 @@ import './promise';
 import './json';
 import './date';
 import './set';
+import './map';
