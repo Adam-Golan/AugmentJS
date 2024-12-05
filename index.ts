@@ -7,3 +7,4 @@ import './function';
 import './promise';
 import './json';
 import './date';
+import './set';

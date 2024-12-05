@@ -86,6 +86,14 @@ declare global {
         add(type: 'y' | 'm' | 'd', value: number): Date;
         subtract(type: 'y' | 'm' | 'd', value: number): Date;
     }
+
+    interface Set<T> {
+        union(set: Set<T>): Set<T>;
+        intersect(set: Set<T>): Set<T>;
+        diff(set: Set<T>): Set<T>;
+        isSubset(set: Set<T>): boolean;
+        symmetricDiff(set: Set<T>): Set<T>;
+    }
 }
 
 export { };
