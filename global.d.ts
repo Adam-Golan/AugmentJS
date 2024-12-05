@@ -24,6 +24,12 @@ declare global {
         toCurrency(locale: string, currency: string): string;
         roundToNearest(multiple: number): number;
     }
+
+    interface BigInt {
+        factorial(): bigint;
+        isPrime(): boolean;
+        toDecimalString(): string;
+    }
 }
 
 export { };
