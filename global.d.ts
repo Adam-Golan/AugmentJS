@@ -13,6 +13,7 @@ declare global {
         isPalindrome(): boolean;
         count(substr: string): number;
         truncate(length: number): string;
+        sliceFrom(substr: string): string;
     }
 
     interface Number {

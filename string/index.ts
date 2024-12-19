@@ -165,3 +165,8 @@ String.prototype.truncate = function (length: number): string {
 String.prototype.superTrim = function (): string {
     return this.trim().replace(/\s+/g, ' ');
 };
+
+
+String.prototype.sliceFrom = function (substr: string): string {
+    return this.slice(this.indexOf(substr) + substr.length);
+}
