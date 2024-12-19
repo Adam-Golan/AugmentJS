@@ -167,6 +167,17 @@ String.prototype.superTrim = function (): string {
 };
 
 
+/**
+ * Returns a new string that is a slice of the original starting from the specified
+ * substring and going to the end of the string.
+ *
+ * @param {string} substr The substring to start the slice from.
+ * @returns {string} The sliced string.
+ * @example
+ *
+ * 'hello world'.sliceFrom('world') // 'world'
+ * 'hello world'.sliceFrom('foo') // ''
+ */
 String.prototype.sliceFrom = function (substr: string): string {
     return this.slice(this.indexOf(substr) + substr.length);
 }
