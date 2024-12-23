@@ -181,3 +181,18 @@ String.prototype.superTrim = function (): string {
 String.prototype.sliceFrom = function (substr: string): string {
     return this.slice(this.indexOf(substr) + substr.length);
 }
+
+/**
+ * Returns a new string that is a slice of the original up to the specified
+ * substring.
+ *
+ * @param {string} substr The substring to end the slice at.
+ * @returns {string} The sliced string.
+ * @example
+ *
+ * 'hello world'.sliceTo('hello') // 'hello'
+ * 'hello world'.sliceTo('foo') // ''
+ */
+String.prototype.sliceTo = function (substr: string): string {
+    return this.slice(0, this.lastIndexOf(substr));
+}

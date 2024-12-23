@@ -14,6 +14,7 @@ declare global {
         count(substr: string): number;
         truncate(length: number): string;
         sliceFrom(substr: string): string;
+        sliceTo(substr: string): string;
     }
 
     interface Number {
