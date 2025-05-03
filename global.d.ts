@@ -15,6 +15,7 @@ declare global {
         truncate(length: number): string;
         sliceFrom(substr: string): string;
         sliceTo(substr: string): string;
+        injector(orig: string, ...substrs: (string | number)[]): string;
     }
 
     interface Number {

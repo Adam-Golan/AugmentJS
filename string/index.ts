@@ -196,3 +196,10 @@ String.prototype.sliceFrom = function (substr: string): string {
 String.prototype.sliceTo = function (substr: string): string {
     return this.slice(0, this.lastIndexOf(substr));
 }
+
+String.prototype.injector = function (this: string, ...substrs: (string | number)[]): string {
+    let str = this;
+    for (let idx = 0; idx < substrs.length; idx++)
+        str = this.replace(`\$\{${idx}\}`, `${substrs[idx]}`);
+    return str;
+}
